@@ -1,0 +1,24 @@
+﻿@model IEnumerable<HackerNewsExample.Models.Story>
+
+@{
+    ViewBag.Title = "Hacker News: Best Stories";
+}
+
+<div class="jumbotron">
+    <h1>Hacker News</h1>
+    <p class="lead">The following are currently the best stories on Hacker News.</p>
+</div>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <h2>
+                @Html.DisplayFor(modelItem => item.title)
+            </h2>
+            <p>
+               Submitted by: @Html.DisplayFor(modelItem => item.by)
+            </p>
+        </div>
+    }
+</div>
